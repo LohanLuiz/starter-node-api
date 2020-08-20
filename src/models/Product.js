@@ -1,27 +1,21 @@
-// Import moongose, like i made in server.js
 const mongoose = require('mongoose');
-
-// Creating a new var named ProductSchema
-// Now, we need to create fields to save on database
-// tittle, description, url and createdAt
 const ProductSchema = new mongoose.Schema({
-  title: {              // Each product need to have a title.
-    type: String,       // String type.
-    required: true,     // To be always required.
+  title: {
+    type: String,
+    required: true,
   },
-  description: {        // Each product need a description.
-    type: String,       // String type.
-    required: true,     // To be always required.
+  description: {
+    type: String,
+    required: true,
   },
-  url: {                // Need a link url
-    type: String,       // String type.
-    required: true,     // To be always required.
+  url: {
+    type: String,
+    required: true,
   },
-  createdAt: {          // Save the creation date time.
-    type: Date,         // Date type.
-    default: Date.now,  // Automatic register the created time.
+  createdAt: {
+    type: Date,
+    default: Date.now,
   },
 });
 
-// This register a model in our database
 mongoose.model('Product', ProductSchema);
